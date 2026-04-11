@@ -30,21 +30,6 @@ The canvas uses `--wp--preset--border-radius--small` and `--wp--preset--border-r
 
 ---
 
-## Missing handoff notes
-
-`output.md` is empty. The FRONTEND-DEV.md workflow requires:
-- Component extraction (one section per component)
-- WordPress mapping for each component (FSE pattern, custom block, or theme.json style variation)
-- Note which buttons are inner blocks, not hardcoded HTML
-
----
-
-## Missing prompt record
-
-`prompt.md` is empty. The input prompt should be recorded here for audit trail and reproducibility.
-
----
-
 ## What the agent got right
 
 - Correct split layout: CSS Grid, content left / visual right (Elayne default)
