@@ -115,6 +115,14 @@ Every component must include developer handoff notes specifying:
 - Keep agent prompts versioned alongside code they support
 - Document breaking changes to prompts that affect agent behavior
 
+## Release Workflow
+
+- **Branch Management**: Always create a new branch for each update, then merge it into `main` via PR or direct merge
+- **Tagging**: Create tags using semantic versioning format only (e.g., `v1.0.2`) — do not include additional prefixes or suffixes
+- **Tag Timing**: Tags must be created **after** merging changes into `main`, never on feature branches
+- **Release Creation**: After tagging, always create a corresponding GitHub release with details summarizing the changes included in that version
+- **CHANGELOG**: Update `CHANGELOG.md` with every version, documenting changes under the appropriate version header before tagging
+
 ## Future Enhancements
 
 - [ ] Add BACKEND-DEV.md for PHP/WordPress backend development

@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2025-06-26
+
+### Added
+
+**.vibe/prompts/vibe.md - Release Workflow Documentation:**
+- Added Release Workflow section documenting branch management requirements
+- Specified semantic versioning tag format (e.g., `v1.0.2`) without additional prefixes/suffixes
+- Clarified tags must be created after merging changes into `main`, never on feature branches
+- Required GitHub release creation with details after tagging
+- Required CHANGELOG.md update before tagging
+
 ## [1.0.2] - 2025-06-26
 
 ### Changed
