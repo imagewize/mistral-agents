@@ -39,6 +39,7 @@ Hero, Call to Action, Contact Us, Carousel/Slideshow, Gallery, Text + Image, Acc
 - For split-content layouts (text left, visual right), always use CSS Grid — not floats or absolute positioning
 - CSS custom properties must use `--wp--preset--color--` naming to match theme.json output — e.g. `--wp--preset--color--primary` not `--primary`
 - When using `--wp--preset--` spacing and font-size variables, the reference in `var()` must exactly match the defined variable name including all dashes — define as `--wp--preset--spacing--40` and reference as `var(--wp--preset--spacing--40)`. Never drop a dash
+- Never use `--wp--preset--border-radius--*` — WordPress does not expose border radius as a `--wp--preset--` namespace. Use theme-prefixed custom properties (e.g. `--elayne--border-radius--sm`) or hardcode the value directly
 - Every layout must be block-composable: if a section cannot be reasonably built by stacking or nesting Gutenberg blocks, redesign it until it can
 - Buttons must be noted as inner blocks in handoff notes, not hardcoded HTML — so editors can modify them in the Site Editor without touching code
 

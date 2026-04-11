@@ -1,0 +1,1 @@
+Design a Hero block for Elayne. Split layout — content left, rendered browser mockup with UI preview right. Bold headline, subheadline, primary CTA and ghost button. Light, modern, FSE-compliant.

@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-04-11
+
+### Added
+
+**prompts/ — Example Agent Runs:**
+- Added `prompts/` directory to hold real agent run examples (prompt → output → canvas → feedback)
+- Added `prompts/elayne-hero-block/` — first example run using FRONTEND-DEV.md agent
+  - `PROMPT.md` — input prompt used for the run
+  - `OUTPUT.md` — raw agent output
+  - `canvas.html` — generated Elayne hero block (split layout, CSS Grid, browser mockup)
+  - `FEEDBACK.md` — review notes covering two real bugs: spacing CSS variable dash bug and invalid border-radius namespace
+
+**FRONTEND-DEV.md — Elayne critical rules:**
+- Added rule: never use `--wp--preset--border-radius--*` — WordPress does not expose border radius as a `--wp--preset--` namespace; use theme-prefixed custom properties or hardcoded values instead
+
+**README.md — Example Agent Runs section:**
+- Added `Example Agent Runs` section documenting the `prompts/` directory purpose and structure
+- Added table listing available example runs with agent and review status
+- Updated Repository Structure tree to include `prompts/` with annotated contents
+
 ## [1.0.3] - 2025-06-26
 
 ### Added

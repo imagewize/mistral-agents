@@ -27,6 +27,12 @@ mistral-agents/
 │   ├── config.toml          # Optional Vibe CLI config
 │   └── prompts/
 │       └── vibe.md          # Repository context
+├── prompts/                 # Example agent runs (prompt → output → feedback)
+│   └── elayne-hero-block/
+│       ├── PROMPT.md        # Input prompt used
+│       ├── OUTPUT.md        # Raw agent output
+│       ├── FEEDBACK.md      # Review notes and issues found
+│       └── canvas.html      # Generated HTML canvas
 ├── README.md
 ├── FRONTEND-DEV.md          # Frontend Developer (WordPress-focused)
 ├── BACKEND-DEV.md           # Backend Developer (planned)
@@ -71,6 +77,22 @@ This repository originated to support these Imagewize projects:
 - Project-specific conventions (FSE block compatibility, ACF fields, etc.)
 
 *You can ignore this section if you're using the agents for non-WordPress work.*
+
+---
+
+## 🧪 Example Agent Runs
+
+The `prompts/` directory contains real agent runs — input prompt, raw output, canvas, and review feedback — so you can see how each agent performs in practice and what to watch out for.
+
+| Run | Agent | Status |
+|-----|-------|--------|
+| [elayne-hero-block](/prompts/elayne-hero-block/) | FRONTEND-DEV | Reviewed — see FEEDBACK.md |
+
+Each run folder contains:
+- **PROMPT.md** — the exact input sent to the agent
+- **OUTPUT.md** — raw agent response
+- **canvas.html** — generated HTML/CSS output
+- **FEEDBACK.md** — review notes: what worked, what failed, fixes needed
 
 ---
 
