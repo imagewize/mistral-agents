@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-04-11
+
+### Added
+
+**prompts/reviewer/ — First Reviewer Agent Example Run:**
+- Added `prompts/reviewer/elayne-hero-block/` — first example run using `agents/REVIEWER.md` agent
+  - `PROMPT.md` — raw HTML input (Elayne hero block) submitted to the REVIEWER agent for code review
+  - `OUTPUT.md` — structured review report with critical failures, warnings, and passed checks
+    - Critical failures: invalid `--wp--preset--border-radius--*` namespace and single-dash spacing variable references
+    - Warnings: generic placeholder text and hardcoded background color in mockup
+    - Verdict: FAIL — documents exactly the categories of errors the REVIEWER agent is designed to catch
+
+### Changed
+
+**README.md — Repository Structure and Example Runs:**
+- Updated structure tree to include `prompts/reviewer/elayne-hero-block/` alongside existing `frontend-dev/` entry
+- Updated Example Agent Runs table: added reviewer run row with FAIL verdict; made frontend-dev path more specific (`frontend-dev/elayne-hero-block/`)
+
 ## [1.3.0] - 2026-04-11
 
 ### Added
