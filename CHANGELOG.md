@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Vibe Agents repository will be documented in this file.
+All notable changes to the mistral-agents repository will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -12,8 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 **Repository Structure:**
-- Created `vibe-agents` repository for Mistral Vibe agent prompts
-- Added `.vibe/config.toml` with Vibe CLI configuration
+- Created `mistral-agents` repository for Mistral Le Chat agent prompts
+- Added `.vibe/config.toml` for optional Vibe CLI configuration
 - Added `.vibe/prompts/` directory for prompt files
 - Added `CHANGELOG.md` following Keep a Changelog format
 
@@ -24,10 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Includes critical rules for production-ready code output
 - Defines workflow: full page build → component extraction → developer handoff notes
 
-**Vibe Configuration Documentation:**
+**Repository Documentation:**
 - Added `.vibe/prompts/vibe.md` with comprehensive repository-level prompt details
 - Documents repository purpose, structure, and conventions
-- Includes Vibe CLI configuration highlights (model, tools, project context, skills)
 - Describes Imagewize project context (imagewize.com, Nynaeve, Elayne)
 - Outlines critical rules, handoff notes requirements, and workflow patterns
 

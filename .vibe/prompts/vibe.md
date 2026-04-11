@@ -1,25 +1,24 @@
-# Vibe Agents Repository
+# Mistral Agents Repository
 
 ## Overview
 
-This is the **vibe-agents** repository, a centralized collection of Mistral Vibe agent prompts, configurations, and skills for the Imagewize development workflow. It serves as a prompt library and configuration hub for Vibe CLI agents used across Imagewize projects.
+This is the **mistral-agents** repository, a centralized collection of Mistral Le Chat agent prompts and configurations for the Imagewize development workflow. It serves as a prompt library for Le Chat agents used across Imagewize projects.
 
 ## Repository Purpose
 
 - **Agent Prompt Library**: Store and version-control specialized agent prompts (e.g., FRONTEND-DEV.md)
-- **Vibe CLI Configuration**: Centralized `.vibe/config.toml` with model settings, tool permissions, and project context
-- **Skill Management**: Reference and enable Vibe skills (currently linked to Elayne theme skills)
+- **Le Chat Agents**: Prompts are loaded as system prompts when creating agents in Mistral Le Chat
 - **Prompt Inheritance**: Base prompts that can be extended by project-specific configurations
 
 ## Current Structure
 
 ```
-vibe-agents/
+mistral-agents/
 ├── .vibe/
-│   ├── config.toml          # Vibe CLI configuration
+│   ├── config.toml          # Optional Vibe CLI configuration
 │   └── prompts/
 │       └── vibe.md          # This file - repository-level prompt details
-├── README.md                # Minimal repository description
+├── README.md                # Repository description
 ├── FRONTEND-DEV.md          # Frontend Developer Agent prompt
 └── (future agent prompts)
 ```
@@ -39,31 +38,14 @@ vibe-agents/
   - Developer handoff notes with WordPress mappings
   - Critical rules for Elayne FSE and Nynaeve Sage conventions
 
-## Vibe CLI Configuration Highlights
+## Le Chat Agent Usage
 
-### Active Model
-- **Model**: `devstral-2` (Mistral Vibe CLI latest)
-- **Provider**: Mistral API
-- **Temperature**: 0.2 (low for deterministic output)
+To use a prompt as a Mistral Le Chat agent:
 
-### Tool Configuration
-- **Search/Replace**: Ask permission, fuzzy matching enabled
-- **Bash**: Allowlist includes git commands, file inspection
-- **Grep**: Always allowed, with smart exclusions
-- **Read/File**: Always allowed, max 64KB per file
-- **Write/File**: Ask permission, creates parent dirs
-- **Todo**: Always allowed, max 100 todos
-
-### Project Context
-- **Max Characters**: 40,000
-- **Default Commit Count**: 5
-- **Max Depth**: 3 directory levels
-- **Max Files**: 1000 per session
-- **Timeout**: 2 seconds
-
-### Skill Integration
-- **Skill Paths**: `~/code/imagewize.com/demo/web/app/themes/elayne/.vibe/skills`
-- **Enabled Skills**: `design` (for Elayne theme design system)
+1. Go to [chat.mistral.ai](https://chat.mistral.ai) → **Agents**
+2. Create a new agent and paste the `.md` file contents as the **System prompt**
+3. Set the model (`mistral-large-latest` or `devstral` recommended)
+4. Save and use the agent
 
 ## Workflow Patterns
 
@@ -74,9 +56,9 @@ vibe-agents/
 4. Reference shared configurations in this vibe.md when applicable
 
 ### For Using This Repository
-1. Clone or symlink agent prompts where needed
-2. Reference prompts via Vibe's `--prompt` or `--prompt-file` flags
-3. Extend base prompts with project-specific context
+1. Clone the repository
+2. Copy prompt contents into Le Chat agent system prompt field
+3. Extend base prompts with project-specific context as needed
 4. Keep the central repository updated with improvements
 
 ## Imagewize Project Context
@@ -144,4 +126,4 @@ Every component must include developer handoff notes specifying:
 
 ---
 
-*This file provides Vibe with context about the vibe-agents repository structure, purpose, and conventions. It should be kept up-to-date as new agent prompts and configurations are added.*
+*This file provides context about the mistral-agents repository structure, purpose, and conventions. It should be kept up-to-date as new agent prompts are added.*

@@ -1,17 +1,17 @@
-# vibe-agents
+# mistral-agents
 
-Mistral Vibe Agent Prompts for Imagewize Development
+Mistral Le Chat Agent Prompts for Imagewize Development
 
 ## Overview
 
-This repository contains **specialized agent prompts** for Mistral Vibe CLI, configured for use across Imagewize projects. It serves as a centralized library of role-specific instructions that guide Vibe's behavior when working on different types of tasks.
+This repository contains **specialized agent prompts** for Mistral Le Chat, configured for use across Imagewize projects. It serves as a centralized library of role-specific instructions that guide Le Chat agents when working on different types of tasks.
 
 ## Repository Structure
 
 ```
-vibe-agents/
+mistral-agents/
 ├── .vibe/
-│   ├── config.toml          # Vibe CLI configuration
+│   ├── config.toml          # Vibe CLI configuration (optional, for local dev)
 │   └── prompts/
 │       └── vibe.md          # Repository-level prompt context
 ├── README.md                # This file
@@ -64,23 +64,13 @@ When adding a new agent to this repository:
 
 ## Usage
 
-### With Vibe CLI
+### With Mistral Le Chat
 
-```bash
-# Use a specific agent prompt
-vibe --prompt-file FRONTEND-DEV.md "Create a hero section for Elayne theme"
-
-# Reference multiple prompts
-vibe --prompt-file FRONTEND-DEV.md --prompt "Additional context here"
-```
-
-### Symlinking to Projects
-
-For project-specific use, symlink agent prompts into your project's `.vibe/prompts/` directory:
-
-```bash
-ln -s ~/code/vibe-agents/FRONTEND-DEV.md ~/.vibe/prompts/frontend-dev.md
-```
+1. Go to [Le Chat](https://chat.mistral.ai) and open **Agents**
+2. Create a new agent or edit an existing one
+3. Copy the contents of the relevant `.md` file (e.g. `FRONTEND-DEV.md`) into the **System prompt** field
+4. Set the model (recommended: `mistral-large-latest` or `devstral`)
+5. Save and start chatting
 
 ## Planned Agents
 
@@ -93,14 +83,7 @@ ln -s ~/code/vibe-agents/FRONTEND-DEV.md ~/.vibe/prompts/frontend-dev.md
 
 ## Configuration
 
-The `.vibe/config.toml` file contains:
-
-- **Active Model**: `devstral-2` (Mistral Vibe CLI latest)
-- **Enabled Skills**: `design` (linked to Elayne theme)
-- **Tool Permissions**: Configured for safe file operations
-- **Project Context**: Optimized for Imagewize codebases
-
-See `.vibe/prompts/vibe.md` for detailed configuration documentation.
+The `.vibe/config.toml` file is kept for optional local Vibe CLI use. See `.vibe/prompts/vibe.md` for repository-level context documentation.
 
 ## Contributing
 
@@ -132,7 +115,8 @@ These rules apply across all agent prompts in this repository:
 
 ## Resources
 
-- [Mistral Vibe Documentation](https://docs.mistral.ai/vibe/)
+- [Mistral Le Chat](https://chat.mistral.ai)
+- [Mistral Le Chat Agents Docs](https://docs.mistral.ai/capabilities/agent/)
 - [Imagewize](https://imagewize.com)
 - [Elayne Theme](~/code/imagewize.com/demo/web/app/themes/elayne/)
 - [Nynaeve Theme](~/code/imagewize.com/demo/web/app/themes/nynaeve/)
