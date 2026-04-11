@@ -17,7 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `PROMPT.md` — input prompt used for the run
   - `OUTPUT.md` — raw agent output
   - `canvas.html` — generated Elayne hero block (split layout, CSS Grid, browser mockup)
-  - `FEEDBACK.md` — review notes covering critical failure (spacing CSS variable dash bug), invalid border-radius namespace, and missing handoff notes
+  - `FEEDBACK.md` — review notes covering two real bugs: spacing CSS variable dash bug and invalid border-radius namespace
+
+**FRONTEND-DEV.md — Elayne critical rules:**
+- Added rule: never use `--wp--preset--border-radius--*` — WordPress does not expose border radius as a `--wp--preset--` namespace; use theme-prefixed custom properties or hardcoded values instead
 
 **README.md — Example Agent Runs section:**
 - Added `Example Agent Runs` section documenting the `prompts/` directory purpose and structure
