@@ -1,91 +1,127 @@
-# mistral-agents
+# Mistral Agents
 
-Mistral Le Chat Agent Prompts for Imagewize Development
+**A library of specialized Mistral Le Chat agent prompts for developers, designers, and creators.**
 
-## Overview
+This repository provides production-ready agent system prompts that you can load directly into [Mistral Le Chat](https://chat.mistral.ai) to get consistent, high-quality output for specific roles and workflows.
 
-This repository contains **specialized agent prompts** for Mistral Le Chat, configured for use across Imagewize projects. It serves as a centralized library of role-specific instructions that guide Le Chat agents when working on different types of tasks.
+Imagewize originally created this for WordPress theme development (Elayne, Nynaeve), but the prompts are designed to be **adaptable to any project**. Use as-is, extend, or fork to fit your needs.
 
-## Repository Structure
+---
+
+## ✨ Quick Start
+
+1. Copy any `.md` file (e.g., `FRONTEND-DEV.md`)
+2. Paste into Le Chat → **Agents** → New Agent → **System Prompt**
+3. Set model to `mistral-large-latest` or `devstral`
+4. Start chatting!
+
+> **Tip**: All prompts follow a consistent structure - you can easily modify them for your tech stack.
+
+---
+
+## 📂 Repository Structure
 
 ```
 mistral-agents/
 ├── .vibe/
-│   ├── config.toml          # Vibe CLI configuration (optional, for local dev)
+│   ├── config.toml          # Optional Vibe CLI config
 │   └── prompts/
-│       └── vibe.md          # Repository-level prompt context
-├── README.md                # This file
-├── FRONTEND-DEV.md          # Frontend Developer Agent
-└── (future agent prompts)
+│       └── vibe.md          # Repository context
+├── README.md
+├── FRONTEND-DEV.md          # Frontend Developer (WordPress-focused)
+├── BACKEND-DEV.md           # Backend Developer (planned)
+└── (add your own!)
 ```
 
-## Available Agents
+---
 
-### 📱 [FRONTEND-DEV.md](/FRONTEND-DEV.md)
-**Role**: Senior Frontend Developer  
-**Scope**: WordPress theme development (HTML/CSS components, page templates, block patterns)  
-**Projects**: imagewize.com, Nynaeve, Elayne  
-**Output**: Production-ready code with developer handoff notes
+## 🎯 Available Agents
 
-*See [FRONTEND-DEV.md](/FRONTEND-DEV.md) for full specifications.*
+| Agent | Role | Focus | Best For |
+|-------|------|-------|----------|
+| [FRONTEND-DEV.md](/FRONTEND-DEV.md) | Senior Frontend Developer | WordPress themes, HTML/CSS, block patterns | WordPress devs, theme authors |
 
-## Imagewize Projects
+**Planned Agents:**
+- `BACKEND-DEV.md` - PHP/WordPress & general backend development
+- `DEVOPS.md` - Deployment, infrastructure, and CI/CD
+- `CONTENT-STRATEGY.md` - Content planning and SEO
+- `UI-UX.md` - User interface and experience design
+- `QA-TESTING.md` - Quality assurance and testing strategies
+- `ACCESSIBILITY.md` - WCAG compliance and a11y best practices
 
-This repository supports development across three main projects:
+> **Note on WordPress Agents**: The current `FRONTEND-DEV.md` is tailored for Imagewize's Elayne (FSE block theme) and Nynaeve (Sage 11 hybrid theme). See [WordPress Context](#-wordpress-context) below for details.
 
-| Project | Type | Target Audience | Tech Stack |
-|---------|------|-----------------|------------|
-| **imagewize.com** | Company/Blog Site | Marketing | WordPress |
-| **Nynaeve** | Theme | Premium Clients | Sage 11, Blade, ACF Composer, React |
-| **Elayne** | Theme | End Users | FSE, Gutenberg Blocks, theme.json |
+---
 
-## Adding New Agent Prompts
+## 🌐 WordPress Context (Optional)
 
-When adding a new agent to this repository:
+*For users of the WordPress-specific agents:*
 
-1. **Create a new markdown file** in the root directory
-2. **Use role-based naming**: `ROLE-DEV.md`, `ROLE-SPECIALIST.md`, etc.
-3. **Include the following sections**:
+This repository originated to support these Imagewize projects:
+
+| Project | Type | Tech Stack |
+|---------|------|------------|
+| **Elayne** | FSE Block Theme | Gutenberg, theme.json, patterns |
+| **Nynaeve** | Sage 11 Hybrid | Blade, ACF Composer, React blocks |
+| **imagewize.com** | Site | Enterprise WordPress |
+
+**The WordPress agents include:**
+- Full page builds with component extraction
+- Developer handoff notes with WP implementation mappings
+- Project-specific conventions (FSE block compatibility, ACF fields, etc.)
+
+*You can ignore this section if you're using the agents for non-WordPress work.*
+
+---
+
+## 📝 Adding Your Own Agents
+
+1. **Create**: New `.md` file in root (e.g., `BACKEND-DEV.md`)
+2. **Name it well**: Use role-based naming like `ROLE-SPECIALIZATION.md`
+3. **Structure your prompt**:
    - Role description and scope
    - Critical rules (do's and don'ts)
    - Output format expectations
-   - Project-specific constraints
-   - Handoff notes requirements
-4. **Update this README** with the new agent in the Available Agents section
-5. **Reference in vibe.md** for Vibe CLI context
+   - Examples of expected output
+   - Project-agnostic instructions where possible
 
-### Agent Naming Convention
-
+**Naming Convention:**
 ```
-{ROLE}-{SPECIALIZATION}.md    e.g., BACKEND-WORDPRESS.md
+{ROLE}-{SPECIALIZATION}.md    e.g., BACKEND-PHP.md
 {ROLE}.md                    e.g., DEVOPS.md
 {TEAM}-{ROLE}.md             e.g., FRONTEND-DEV.md
 ```
 
-## Usage
+**Quality Checklist:**
+- [ ] Clear, specific instructions (no "you should probably")
+- [ ] Examples of expected output
+- [ ] Do's and don'ts explicitly stated
+- [ ] Project-agnostic where possible (add variants for specific stacks)
+- [ ] Follows existing formatting in other prompts
 
-### With Mistral Le Chat
+---
 
-1. Go to [Le Chat](https://chat.mistral.ai) and open **Agents**
-2. Create a new agent or edit an existing one
-3. Copy the contents of the relevant `.md` file (e.g. `FRONTEND-DEV.md`) into the **System prompt** field
-4. Set the model (recommended: `mistral-large-latest` or `devstral`)
-5. Save and start chatting
+## 🏗 Universal Critical Rules
 
-## Planned Agents
+*Applied across all agents in this repository:*
 
-- [ ] **BACKEND-DEV.md** - PHP/WordPress backend development
-- [ ] **DEVOPS.md** - Deployment, infrastructure, and CI/CD
-- [ ] **CONTENT-STRATEGY.md** - Content planning and SEO
-- [ ] **UI-UX.md** - User interface and experience design
-- [ ] **QA-TESTING.md** - Quality assurance and testing strategies
-- [ ] **ACCESSIBILITY.md** - WCAG compliance and a11y best practices
+1. **Production-ready output only** - No placeholders, descriptions, or "replace with X" comments
+2. **Mobile-first** - All output must be responsive by default
+3. **No centered overlay heroes** - This is the most common failure pattern to avoid
+4. **Realistic content** - Use relevant dummy content, never lorem ipsum or placeholder text
+5. **Consistent formatting** - Follow the repository's style guidelines
 
-## Configuration
+---
 
-The `.vibe/config.toml` file is kept for optional local Vibe CLI use. See `.vibe/prompts/vibe.md` for repository-level context documentation.
+## 🔗 Resources
 
-## Contributing
+- [Mistral Le Chat](https://chat.mistral.ai)
+- [Mistral Agent Documentation](https://docs.mistral.ai/capabilities/agent/)
+- [Imagewize](https://imagewize.com) - Original creators of this repository
+
+---
+
+## 🤝 Contributing
 
 1. Fork this repository
 2. Create a new branch for your agent prompt
@@ -93,34 +129,8 @@ The `.vibe/config.toml` file is kept for optional local Vibe CLI use. See `.vibe
 4. Update the README with your agent's details
 5. Submit a pull request
 
-### Quality Guidelines
-
-- ✅ **Be specific**: Clear, unambiguous instructions
-- ✅ **Be actionable**: Tell the agent WHAT to do and HOW
-- ✅ **Include examples**: Show expected output formats
-- ✅ **Document constraints**: List what NOT to do
-- ✅ **Project-aware**: Tailor to Imagewize conventions
-- ❌ **Avoid vagueness**: No "you should probably..."
-- ❌ **Avoid placeholders**: No lorem ipsum or TODOs in agent outputs
-
-## Critical Rules (All Agents)
-
-These rules apply across all agent prompts in this repository:
-
-1. **Production-ready output only** - No placeholders, descriptions, or "replace with X" comments
-2. **Mobile-first** - All output must be responsive
-3. **No centered overlay heroes** - This is the most common failure mode
-4. **Realistic content** - Use relevant dummy content, never lorem ipsum
-5. **Project-specific conventions** - Honor each project's tech stack and aesthetic
-
-## Resources
-
-- [Mistral Le Chat](https://chat.mistral.ai)
-- [Mistral Le Chat Agents Docs](https://docs.mistral.ai/capabilities/agent/)
-- [Imagewize](https://imagewize.com)
-- [Elayne Theme](~/code/imagewize.com/demo/web/app/themes/elayne/)
-- [Nynaeve Theme](~/code/imagewize.com/demo/web/app/themes/nynaeve/)
+We welcome contributions for any domain - not just WordPress!
 
 ---
 
-*Maintained by Imagewize for internal development workflows.*
+*Originally created by Imagewize; now maintained for the Mistral Le Chat community.*
