@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-04-11
+
+### Changed
+
+**agents/REVIEWER.md — Handoff Notes and Visual Completeness Refinements:**
+- Updated Handoff Notes check: if handoff notes are absent entirely, agent now adds a Critical Failure ("Handoff notes missing — resubmit with component mapping included") and lists it first before all other findings — previously only marked as FAIL and halted
+- Updated behavior rule to match: missing handoff notes trigger a listed Critical Failure rather than an immediate silent halt
+- Added Visual Completeness clarification: a `div` with a background color or gradient used as an image placeholder is correct and expected — only `url()` references in CSS should be flagged as hardcoded background image violations
+
 ## [1.3.1] - 2026-04-11
 
 ### Added
