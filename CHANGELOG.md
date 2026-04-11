@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-04-11
+
+### Added
+
+**agents/ — Dedicated Agent Directory:**
+- Added `agents/` directory to house all agent prompt files (previously stored in root)
+- Added `agents/REVIEWER.md` — new Code Review Agent specializing in WordPress FSE frontend code review
+  - Runs a structured checklist: CSS variable integrity, layout rules, visual completeness, FSE/WordPress conventions
+  - Flags critical failures with file location and precise fix guidance
+  - Outputs a pass/fail report with categorized severity levels
+
+### Changed
+
+**Repository Structure — Agent Files Moved to `agents/`:**
+- Moved `FRONTEND-DEV.md` from repo root to `agents/FRONTEND-DEV.md`
+- Updated `README.md` quick start, structure tree, agent table, and adding-agents guide to reference `agents/` path
+- Updated `.vibe/prompts/vibe.md` structure tree and workflow patterns to reference `agents/` directory
+
+**prompts/ — Example Runs Reorganized by Agent:**
+- Moved `prompts/elayne-hero-block/` → `prompts/frontend-dev/elayne-hero-block/`
+- Example runs are now grouped under agent-named subdirectories (e.g., `prompts/frontend-dev/`) for scalability
+- Updated `README.md` example runs table to reflect new path
+
 ## [1.2.0] - 2026-04-11
 
 ### Added
