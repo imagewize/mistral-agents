@@ -18,9 +18,19 @@ mistral-agents/
 │   ├── config.toml          # Optional Vibe CLI configuration
 │   └── prompts/
 │       └── vibe.md          # This file - repository-level prompt details
+├── agents/                  # Agent prompt files
+│   ├── FRONTEND-DEV.md      # Frontend Developer Agent prompt
+│   ├── REVIEWER.md          # Code Reviewer Agent prompt
+│   └── (future agent prompts)
+├── prompts/                 # Example agent runs (prompt → output → feedback)
+│   └── frontend-dev/        # FRONTEND-DEV agent runs
+│       └── elayne-hero-block/   # Example run: Elayne hero block
+│           ├── PROMPT.md        # Input prompt used
+│           ├── OUTPUT.md        # Raw agent output
+│           ├── FEEDBACK.md      # Review notes and issues found
+│           └── canvas.html      # Generated HTML canvas
 ├── README.md                # Repository description
-├── FRONTEND-DEV.md          # Frontend Developer Agent prompt
-└── (future agent prompts)
+└── CHANGELOG.md             # Version history
 ```
 
 ## Available Agent Prompts
@@ -50,7 +60,7 @@ To use a prompt as a Mistral Le Chat agent:
 ## Workflow Patterns
 
 ### For Agent Prompt Creation
-1. Create new `.md` files in the root for major agent roles
+1. Create new `.md` files in the `agents/` directory for major agent roles
 2. Use clear role-based naming (e.g., `BACKEND-DEV.md`, `DEVOPS.md`)
 3. Include critical rules, output format expectations, and project-specific constraints
 4. Reference shared configurations in this vibe.md when applicable

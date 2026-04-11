@@ -10,7 +10,7 @@ Imagewize originally created this for WordPress theme development (Elayne, Nynae
 
 ## ✨ Quick Start
 
-1. Copy any `.md` file (e.g., `FRONTEND-DEV.md`)
+1. Copy any `.md` file from the `agents/` directory (e.g., `agents/FRONTEND-DEV.md`)
 2. Paste into Le Chat → **Agents** → New Agent → **System Prompt**
 3. Set model to `mistral-large-latest` or `devstral`
 4. Start chatting!
@@ -27,16 +27,20 @@ mistral-agents/
 │   ├── config.toml          # Optional Vibe CLI config
 │   └── prompts/
 │       └── vibe.md          # Repository context
+├── agents/                  # Agent prompt files
+│   ├── FRONTEND-DEV.md      # Frontend Developer (WordPress-focused)
+│   ├── REVIEWER.md          # Code Reviewer
+│   └── (add your own!)
 ├── prompts/                 # Example agent runs (prompt → output → feedback)
-│   └── elayne-hero-block/
-│       ├── PROMPT.md        # Input prompt used
-│       ├── OUTPUT.md        # Raw agent output
-│       ├── FEEDBACK.md      # Review notes and issues found
-│       └── canvas.html      # Generated HTML canvas
+│   └── frontend-dev/        # FRONTEND-DEV agent runs
+│       └── elayne-hero-block/   # Example run: Elayne hero block
+│           ├── PROMPT.md        # Input prompt used
+│           ├── OUTPUT.md        # Raw agent output
+│           ├── FEEDBACK.md      # Review notes and issues found
+│           └── canvas.html      # Generated HTML canvas
 ├── README.md
-├── FRONTEND-DEV.md          # Frontend Developer (WordPress-focused)
-├── BACKEND-DEV.md           # Backend Developer (planned)
-└── (add your own!)
+├── CHANGELOG.md
+└── LICENSE.md
 ```
 
 ---
@@ -45,7 +49,8 @@ mistral-agents/
 
 | Agent | Role | Focus | Best For |
 |-------|------|-------|----------|
-| [FRONTEND-DEV.md](/FRONTEND-DEV.md) | Senior Frontend Developer | WordPress themes, HTML/CSS, block patterns | WordPress devs, theme authors |
+| [FRONTEND-DEV.md](/agents/FRONTEND-DEV.md) | Senior Frontend Developer | WordPress themes, HTML/CSS, block patterns | WordPress devs, theme authors |
+| [REVIEWER.md](/agents/REVIEWER.md) | Code Reviewer | Code analysis, quality assessment | All developers |
 
 **Planned Agents:**
 - `BACKEND-DEV.md` - PHP/WordPress & general backend development
@@ -86,7 +91,7 @@ The `prompts/` directory contains real agent runs — input prompt, raw output, 
 
 | Run | Agent | Status |
 |-----|-------|--------|
-| [elayne-hero-block](/prompts/elayne-hero-block/) | FRONTEND-DEV | Reviewed — see FEEDBACK.md |
+| [frontend-dev](/prompts/frontend-dev/) | FRONTEND-DEV | Reviewed — see FEEDBACK.md |
 
 Each run folder contains:
 - **PROMPT.md** — the exact input sent to the agent
@@ -98,7 +103,7 @@ Each run folder contains:
 
 ## 📝 Adding Your Own Agents
 
-1. **Create**: New `.md` file in root (e.g., `BACKEND-DEV.md`)
+1. **Create**: New `.md` file in the `agents/` directory (e.g., `agents/BACKEND-DEV.md`)
 2. **Name it well**: Use role-based naming like `ROLE-SPECIALIZATION.md`
 3. **Structure your prompt**:
    - Role description and scope
