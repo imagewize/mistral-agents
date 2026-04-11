@@ -32,12 +32,16 @@ mistral-agents/
 │   ├── REVIEWER.md          # Code Reviewer
 │   └── (add your own!)
 ├── prompts/                 # Example agent runs (prompt → output → feedback)
-│   └── frontend-dev/        # FRONTEND-DEV agent runs
-│       └── elayne-hero-block/   # Example run: Elayne hero block
-│           ├── PROMPT.md        # Input prompt used
-│           ├── OUTPUT.md        # Raw agent output
-│           ├── FEEDBACK.md      # Review notes and issues found
-│           └── canvas.html      # Generated HTML canvas
+│   ├── frontend-dev/        # FRONTEND-DEV agent runs
+│   │   └── elayne-hero-block/   # Example run: Elayne hero block
+│   │       ├── PROMPT.md        # Input prompt used
+│   │       ├── OUTPUT.md        # Raw agent output
+│   │       ├── FEEDBACK.md      # Review notes and issues found
+│   │       └── canvas.html      # Generated HTML canvas
+│   └── reviewer/            # REVIEWER agent runs
+│       └── elayne-hero-block/   # Example run: Elayne hero block review
+│           ├── PROMPT.md        # HTML input submitted for review
+│           └── OUTPUT.md        # Structured review report (FAIL)
 ├── README.md
 ├── CHANGELOG.md
 └── LICENSE.md
@@ -91,7 +95,8 @@ The `prompts/` directory contains real agent runs — input prompt, raw output, 
 
 | Run | Agent | Status |
 |-----|-------|--------|
-| [frontend-dev](/prompts/frontend-dev/) | FRONTEND-DEV | Reviewed — see FEEDBACK.md |
+| [frontend-dev/elayne-hero-block](/prompts/frontend-dev/elayne-hero-block/) | FRONTEND-DEV | Reviewed — see FEEDBACK.md |
+| [reviewer/elayne-hero-block](/prompts/reviewer/elayne-hero-block/) | REVIEWER | FAIL — CSS variable namespace + dash syntax errors |
 
 Each run folder contains:
 - **PROMPT.md** — the exact input sent to the agent
