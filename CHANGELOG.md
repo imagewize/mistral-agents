@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-06-25
+
+### Changed
+
+**README.md - Repository Rebranding:**
+- Rebranded from WordPress/Imagewize-specific to general-purpose agent library
+- Added origin story clarifying Imagewize roots while emphasizing adaptability
+- Updated title from "mistral-agents" to "Mistral Agents"
+
+**README.md - Structure & Content:**
+- **Added**: Quick Start section with step-by-step setup instructions
+- **Removed**: Configuration section (redundant with Quick Start)
+- **Renamed**: "Imagewize Projects" → "WordPress Context (Optional)" to make it optional reading
+- **Renamed**: "Adding New Agent Prompts" → "Adding Your Own Agents" with enhanced guidance
+- **Renamed**: "Critical Rules (All Agents)" → "Universal Critical Rules" for broader applicability
+- **Restructured**: Available Agents as a clear table with role, focus, and audience columns
+- **Restructured**: WordPress project table simplified (removed Target Audience column)
+- **Updated**: Contributing section to explicitly welcome non-WordPress contributions
+- **Updated**: Resources section - removed internal theme directory links
+- **Updated**: Planned Agents from checklist format to list format
+- **Updated**: Footer from "Maintained by Imagewize for internal" to "Originally created by Imagewize; now maintained for the Mistral Le Chat community"
+
 ## [1.0.0] - 2025-04-11
 
 ### Added
