@@ -9,15 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-**agents/CODE-REVIEW.md — New Code Review Agent for Theme Repositories:**
-- Added comprehensive code review agent adapted from aludra's methodology
-- Supports branch mode (review diffs) and audit mode (review files in place)
-- Project-specific checklists for Elayne (FSE), Nynaeve (Sage 11), and imagewize.com
-- WordPress security and correctness checks (escaping, sanitization, guards, etc.)
-- CSS and frontend validation rules aligned with existing REVIEWER.md
-- Git integration for automatic file discovery and categorization
-- Structured CONFIRMED/PLAUSIBLE finding labels with verification discipline
-- Architecture review for duplication, boundaries, and reachability
+**skills/code-review/ — Mistral Vibe code-review skill for WordPress projects:**
+- Added `skills/code-review/SKILL.md`, an Agent Skill invoked as `/code-review` in Mistral Vibe
+- Reviews a branch diff or GitHub PR (branch mode), or a block, pattern, template or path as it stands (audit mode)
+- Detects the project type (plugin, theme, block theme, Sage, Bedrock), minimum PHP and WordPress, text domain and lint/test commands from the repository instead of hard-coding them
+- Loads project-specific rules from `.agents/code-review.md` in the reviewed project, falling back to `.vibe/code-review.md`, then `AGENTS.md`
+- WordPress checklist applied per project type: escaping, sanitization, nonces and capabilities, SQL, i18n, minimum versions, theme patterns, theme.json presets, blocks and committed build output, Sage, Bedrock
+- Verification pass: every finding needs a failure scenario and a CONFIRMED/PLAUSIBLE label; the overall assessment follows from CONFIRMED items only
+- Tool-use rules and a documented project allowlist so a review runs without approval prompts
+- Adapted from the Aludra plugin's skill, which now uses this skill with Aludra's own rules file
+
+**AGENTS.md — Repository Instructions for Coding Agents:**
+- Added `AGENTS.md` with the repository's purpose, layout, conventions for Le Chat agents and Vibe skills, and commit and release rules
+- Vibe loads it on top of its built-in system prompt; replaces `.vibe/prompts/vibe.md`
 
 **agents/REVIEWER.md — Enhanced with Verification Discipline:**
 - Added behavior rules: never skip checks, explicit failure listing, re-run after fixes
@@ -28,15 +32,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-**README.md — Updated Agent Table and Structure:**
-- Added CODE-REVIEW.md to Available Agents table with role, focus, and audience
-- Updated repository structure tree to include CODE-REVIEW.md
+**README.md — Covers Le Chat Agents and Vibe Skills:**
+- Reframed the repository as Mistral Le Chat agent prompts and Mistral Vibe skills for WordPress development
+- Split into a Le Chat Agents section (quick start, agents, WordPress context, frontend rules, example runs) and a Mistral Vibe Skills section (`/code-review`, install, project rules, allowlist)
+- Added a note on using `AGENTS.md` for project instructions rather than `system_prompt_id`
+- Updated the structure tree for `AGENTS.md`, `skills/` and the reviewer run's `FEEDBACK.md`
 - Clarified REVIEWER.md as "Frontend Code Reviewer" for HTML/CSS output analysis
 
-**.vibe/prompts/vibe.md — Updated Agent Documentation:**
-- Added CODE-REVIEW.md section with role, scope, projects, and key features
-- Updated REVIEWER.md section to clarify its specific focus on frontend output
-- Updated repository structure tree to include CODE-REVIEW.md
+**.vibe/config.toml — Project Settings Only:**
+- Removed `system_prompt_id = "vibe"`, which replaced Vibe's built-in system prompt with repository notes
+- Removed the copy of user-level settings (models, providers, tool permissions) and a `skill_paths` entry pointing at a directory that does not exist
+- Set `include_commit_signature = false` so Vibe does not ask for a `Co-Authored-By` trailer, per the repository's commit rules
+
+### Removed
+
+- `.vibe/prompts/vibe.md` — repository notes moved to `AGENTS.md`
+
+**Repository metadata:**
+- GitHub description updated to "Mistral Le Chat agent prompts and Mistral Vibe skills for WordPress development"; added topics `mistral-vibe`, `agent-skills`, `wordpress`
 
 ## [1.3.2] - 2026-04-11
 
