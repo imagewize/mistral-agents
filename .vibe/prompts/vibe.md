@@ -19,8 +19,9 @@ mistral-agents/
 │   └── prompts/
 │       └── vibe.md          # This file - repository-level prompt details
 ├── agents/                  # Agent prompt files
+│   ├── CODE-REVIEW.md       # Code Review Agent for theme repositories
 │   ├── FRONTEND-DEV.md      # Frontend Developer Agent prompt
-│   ├── REVIEWER.md          # Code Reviewer Agent prompt
+│   ├── REVIEWER.md          # Frontend Code Reviewer Agent prompt
 │   └── (future agent prompts)
 ├── prompts/                 # Example agent runs (prompt → output → feedback)
 │   └── frontend-dev/        # FRONTEND-DEV agent runs
@@ -35,6 +36,21 @@ mistral-agents/
 
 ## Available Agent Prompts
 
+### CODE-REVIEW.md
+- **Role**: Code Reviewer for theme repository audits
+- **Scope**: PHP, JS, SCSS, patterns, templates, theme.json, project structure
+- **Projects**: 
+  - Elayne (FSE block theme)
+  - Nynaeve (Sage 11 hybrid theme)
+  - imagewize.com (company/blog site)
+- **Key Features**: 
+  - Branch mode (review diffs) and audit mode (review files in place)
+  - Comprehensive checklist for each project type
+  - WordPress security and correctness checks
+  - Git integration for file discovery
+  - Structured CONFIRMED/PLAUSIBLE finding labels
+  - Architecture and duplication review
+
 ### FRONTEND-DEV.md
 - **Role**: Senior Frontend Developer specializing in WordPress theme development
 - **Scope**: HTML/CSS components, page templates, block patterns
@@ -47,6 +63,16 @@ mistral-agents/
   - Full page builds with component extraction
   - Developer handoff notes with WordPress mappings
   - Critical rules for Elayne FSE and Nynaeve Sage conventions
+
+### REVIEWER.md
+- **Role**: Frontend Code Reviewer for HTML/CSS output
+- **Scope**: Reviewing generated HTML/CSS from FRONTEND-DEV agent
+- **Projects**: All Imagewize projects
+- **Key Features**: 
+  - CSS variable integrity checks
+  - Layout rules validation
+  - Visual completeness verification
+  - FSE compliance and handoff notes review
 
 ## Le Chat Agent Usage
 

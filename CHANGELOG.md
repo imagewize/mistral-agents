@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+**agents/CODE-REVIEW.md — New Code Review Agent for Theme Repositories:**
+- Added comprehensive code review agent adapted from aludra's methodology
+- Supports branch mode (review diffs) and audit mode (review files in place)
+- Project-specific checklists for Elayne (FSE), Nynaeve (Sage 11), and imagewize.com
+- WordPress security and correctness checks (escaping, sanitization, guards, etc.)
+- CSS and frontend validation rules aligned with existing REVIEWER.md
+- Git integration for automatic file discovery and categorization
+- Structured CONFIRMED/PLAUSIBLE finding labels with verification discipline
+- Architecture review for duplication, boundaries, and reachability
+
+**agents/REVIEWER.md — Enhanced with Verification Discipline:**
+- Added behavior rules: never skip checks, explicit failure listing, re-run after fixes
+- Added verification discipline: try to disprove findings before reporting
+- Added CONFIRMED/PLAUSIBLE labels for findings with failure scenarios
+- Updated output format to include Target description and finding labels
+- Clarified that findings without verifiable failure scenarios should be dropped
+
+### Changed
+
+**README.md — Updated Agent Table and Structure:**
+- Added CODE-REVIEW.md to Available Agents table with role, focus, and audience
+- Updated repository structure tree to include CODE-REVIEW.md
+- Clarified REVIEWER.md as "Frontend Code Reviewer" for HTML/CSS output analysis
+
+**.vibe/prompts/vibe.md — Updated Agent Documentation:**
+- Added CODE-REVIEW.md section with role, scope, projects, and key features
+- Updated REVIEWER.md section to clarify its specific focus on frontend output
+- Updated repository structure tree to include CODE-REVIEW.md
+
 ## [1.3.2] - 2026-04-11
 
 ### Changed

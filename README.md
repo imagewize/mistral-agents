@@ -28,8 +28,9 @@ mistral-agents/
 │   └── prompts/
 │       └── vibe.md          # Repository context
 ├── agents/                  # Agent prompt files
+│   ├── CODE-REVIEW.md       # Code Review Agent for theme repositories
 │   ├── FRONTEND-DEV.md      # Frontend Developer (WordPress-focused)
-│   ├── REVIEWER.md          # Code Reviewer
+│   ├── REVIEWER.md          # Frontend Code Reviewer
 │   └── (add your own!)
 ├── prompts/                 # Example agent runs (prompt → output → feedback)
 │   ├── frontend-dev/        # FRONTEND-DEV agent runs
@@ -53,8 +54,9 @@ mistral-agents/
 
 | Agent | Role | Focus | Best For |
 |-------|------|-------|----------|
+| [CODE-REVIEW.md](/agents/CODE-REVIEW.md) | Code Reviewer | Theme repository audit, PHP/JS/SCSS, patterns | WordPress devs, theme maintainers |
 | [FRONTEND-DEV.md](/agents/FRONTEND-DEV.md) | Senior Frontend Developer | WordPress themes, HTML/CSS, block patterns | WordPress devs, theme authors |
-| [REVIEWER.md](/agents/REVIEWER.md) | Code Reviewer | Code analysis, quality assessment | All developers |
+| [REVIEWER.md](/agents/REVIEWER.md) | Frontend Code Reviewer | HTML/CSS output analysis, FSE compliance | Frontend devs, designers |
 
 **Planned Agents:**
 - `BACKEND-DEV.md` - PHP/WordPress & general backend development
